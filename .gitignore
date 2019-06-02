@@ -12,7 +12,7 @@
 !/README.org
 !/LICENSE.txt
 !/project.clj
-!/resources/*
+!/resources/**
 !/src/clj/**/*.clj
 !/src/cljc/**/*.cljc
 !/src/cljs/**/*.cljs
