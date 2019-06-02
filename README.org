@@ -9,7 +9,7 @@ A [[https://github.com/Day8/re-frame][re-frame]] application designed to ... wel
 Put this in your Emacs config file:
 
 #+NAME: cider-config
-#+BEGIN_SRC clojure
+#+BEGIN_SRC emacs-lisp
 (setq cider-cljs-lein-repl
   "(do (require 'figwheel-sidecar.repl-api)
          (figwheel-sidecar.repl-api/start-figwheel!)
