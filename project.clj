@@ -3,18 +3,18 @@
                  [org.clojure/clojurescript "1.10.520"]
                  [reagent "0.8.1"]
                  [re-frame "0.10.6"]
-                 [re-com "2.4.0"]
+                 [re-com "2.5.0"]
                  [secretary "1.2.3"]
-                 [garden "1.3.5"]
+                 [garden "1.3.9"]
                  [ns-tracker "0.3.1"]
-                 [compojure "1.5.0"]
-                 [yogthos/config "0.8"]
-                 [ring "1.4.0"]
-                 [re-pressed "0.2.2"]
+                 [compojure "1.6.1"]
+                 [yogthos/config "1.1.2"]
+                 [ring "1.7.1"]
+                 [re-pressed "0.3.0"]
                  [breaking-point "0.1.2"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-garden "0.2.8"]]
+            [lein-garden "0.3.0"]]
 
   :min-lein-version "2.5.3"
 
@@ -38,11 +38,11 @@
   :profiles
   {:dev
    {:dependencies [[binaryage/devtools "0.9.10"]
-                   [figwheel-sidecar "0.5.16"]
-                   [cider/piggieback "0.3.5"]]
+                   [figwheel-sidecar "0.5.18"]
+                   [cider/piggieback "0.4.1"]]
 
     :plugins      [[lein-figwheel "0.5.18"]
-                   [lein-doo "0.1.8"]]}
+                   [lein-doo "0.1.11"]]}
    :prod { }
    :uberjar {:source-paths ["env/prod/clj"]
              :omit-source  true
