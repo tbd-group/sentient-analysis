@@ -1,0 +1,24 @@
+# Blacklist everything by default
+*
+
+# Whitelist directories for filename-pattern matching
+!*/
+
+# Whitelist specific filename patterns
+!/.gitignore
+!/.java-version
+!/Procfile
+!/CHANGELOG.org
+!/README.org
+!/LICENSE.txt
+!/project.clj
+!/resources/*
+!/src/clj/**/*.clj
+!/src/cljc/**/*.cljc
+!/src/cljs/**/*.cljs
+!/test/clj/**/*.clj
+!/test/cljc/**/*.cljc
+!/test/cljs/**/*.cljs
+
+# Ignore all compiled resources
+/resources/**/compiled/*

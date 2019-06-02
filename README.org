@@ -1,0 +1,102 @@
+* sentient-analysis
+
+A [[https://github.com/Day8/re-frame][re-frame]] application designed to ... well, that part is up to you.
+
+** Development Mode
+
+*** Start Cider from Emacs:
+
+Put this in your Emacs config file:
+
+#+NAME: cider-config
+#+BEGIN_SRC clojure
+(setq cider-cljs-lein-repl
+  "(do (require 'figwheel-sidecar.repl-api)
+         (figwheel-sidecar.repl-api/start-figwheel!)
+         (figwheel-sidecar.repl-api/cljs-repl))")
+#+END_SRC
+
+Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
+
+*** Compile css:
+
+Compile css file once.
+
+#+NAME: compile-css-once
+#+BEGIN_SRC sh
+lein garden once
+#+END_SRC
+
+Automatically recompile css file on change.
+
+#+NAME: compile-css-automatically
+#+BEGIN_SRC sh
+lein garden auto
+#+END_SRC
+
+*** Run application:
+
+#+NAME: run-app-dev
+#+BEGIN_SRC sh
+lein clean
+lein figwheel dev
+#+END_SRC
+
+Figwheel will automatically push cljs changes to the browser.
+
+Wait a bit, then browse to [[http://localhost:3449][http://localhost:3449]].
+
+*** Run tests:
+
+Install karma and headless chrome
+
+#+NAME: install-test-deps
+#+BEGIN_SRC sh
+npm install -g karma-cli
+npm install karma karma-cljs-test karma-chrome-launcher --save-dev
+#+END_SRC
+
+And then run your tests
+
+#+NAME: run-tests
+#+BEGIN_SRC sh
+lein clean
+lein doo chrome-headless test once
+#+END_SRC
+
+Please note that [[https://github.com/bensu/doo][doo]] can be configured to run cljs.test in many JS environments (phantom, chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
+
+** Production Build
+
+#+NAME: production-build
+#+BEGIN_SRC sh
+lein clean
+lein with-profile prod uberjar
+#+END_SRC
+
+That should compile the clojurescript code first, and then create the standalone jar.
+
+When you run the jar you can set the port the ring server will use by setting the environment variable PORT.
+If it's not set, it will run on port 3000 by default.
+
+To deploy to heroku, first create your app:
+
+#+NAME: create-heroku-app
+#+BEGIN_SRC sh
+heroku create
+#+END_SRC
+
+Then deploy the application:
+
+#+NAME: deploy-heroku-app
+#+BEGIN_SRC sh
+git push heroku master
+#+END_SRC
+
+To compile clojurescript to javascript:
+
+#+NAME: compile-cljs
+#+BEGIN_SRC sh
+lein clean
+lein cljsbuild once min
+#+END_SRC

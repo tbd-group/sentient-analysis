@@ -1,0 +1,10 @@
+* Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [[https://keepachangelog.com/en/1.0.0/][Keep a Changelog]], and this project adheres to [[https://semver.org/spec/v2.0.0.html][Semantic Versioning]].
+
+** [[https://github.com/olivierlacan/keep-a-changelog/compare/v0.1.0...HEAD][Unreleased]]
+
+** [[https://github.com/tbd-group/sentient-analysis/releases/tag/v0.1.0][0.1.0]] - 2019-06-01
+*** Added
+- Files from [[https://github.com/Day8/re-frame-template][re-frame/lein-template]].
