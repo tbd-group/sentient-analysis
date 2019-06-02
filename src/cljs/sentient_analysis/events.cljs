@@ -14,7 +14,7 @@
  (fn [db [_ active-panel]]
    (assoc db :active-panel active-panel)))
 
-(re-frame/reg-event-db
- ::set-re-pressed-example
- (fn [db [_ value]]
-   (assoc db :re-pressed-example value)))
+;; (re-frame/reg-event-db
+;;  ::set-re-pressed-example
+;;  (fn [db [_ value]]
+;;    (assoc db :re-pressed-example value)))

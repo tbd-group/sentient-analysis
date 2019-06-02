@@ -18,6 +18,31 @@
        (secretary/dispatch! (.-token event))))
     (.setEnabled true)))
 
+(defn lower->upper [c]
+  (.toUpperCase c))
+
+(defn char->charCode [c]
+  (.charCodeAt c 0))
+
+(defn key->binding [binding-opts k]
+  [(merge {:keyCode k
+           :altKey false
+           :ctrlKey false
+           :metaKey false
+           :shiftKey false}
+          binding-opts)])
+
+(defn ->shortcut [handler key-combo & {:as binding-opts}]
+  (let [key-bindings (mapv (comp (partial key->binding binding-opts)
+                                 char->charCode
+                                 lower->upper)
+                           key-combo)]
+    (apply conj [handler] key-bindings)))
+
+(defn ->shortcut' [handler key-codes & {:as binding-opts}]
+  (let [key-bindings (mapv (partial key->binding binding-opts) key-codes)]
+    (apply conj [handler] key-bindings)))
+
 (defn app-routes []
   (secretary/set-config! :prefix "#")
   ;; --------------------
@@ -27,14 +52,12 @@
     (re-frame/dispatch [::events/set-re-pressed-example nil])
     (re-frame/dispatch
      [::rp/set-keydown-rules
-      {:event-keys [[[::events/set-re-pressed-example "Hello, world!"]
-                     [{:which 72} ;; h
-                      {:which 69} ;; e
-                      {:which 76} ;; l
-                      {:which 76} ;; l
-                      {:which 79} ;; o
-                      ]]]
+      {:event-keys [[
+                     ]]
 
+       :prevent-default-keys [{:keyCode (char->charCode \space)}
+                              {:keyCode (char->charCode \tab)}
+                              ]
        :clear-keys
        [[{:which 27} ;; escape
          ]]}])
