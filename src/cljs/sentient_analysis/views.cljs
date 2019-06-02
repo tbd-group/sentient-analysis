@@ -2,7 +2,7 @@
   (:require
    [re-frame.core :as re-frame]
    [re-com.core :as re-com]
-   [breaking-point.core :as bp]
+   ;; [breaking-point.core :as bp]
    [re-pressed.core :as rp]
    [sentient-analysis.subs :as subs]
    ))
@@ -10,19 +10,19 @@
 
 ;; home
 
-(defn display-re-pressed-example []
-  (let [re-pressed-example (re-frame/subscribe [::subs/re-pressed-example])]
-    [:div
+;; (defn display-re-pressed-example []
+;;   (let [re-pressed-example (re-frame/subscribe [::subs/re-pressed-example])]
+;;     [:div
 
-     [:p
-      [:span "Re-pressed is listening for keydown events. A message will be displayed when you type "]
-      [:strong [:code "hello"]]
-      [:span ". So go ahead, try it out!"]]
+;;      [:p
+;;       [:span "Re-pressed is listening for keydown events. A message will be displayed when you type "]
+;;       [:strong [:code "hello"]]
+;;       [:span ". So go ahead, try it out!"]]
 
-     (when-let [rpe @re-pressed-example]
-       [re-com/alert-box
-        :alert-type :info
-        :body rpe])]))
+;;      (when-let [rpe @re-pressed-example]
+;;        [re-com/alert-box
+;;         :alert-type :info
+;;         :body rpe])]))
 
 (defn home-title []
   (let [name (re-frame/subscribe [::subs/name])]
@@ -40,10 +40,10 @@
    :gap "1em"
    :children [[home-title]
               [link-to-about-page]
-              [display-re-pressed-example]
-              [:div
-               [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
-               [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]
+              ;; [display-re-pressed-example]
+              ;; [:div
+              ;;  [:h3 (str "screen-width: " @(re-frame/subscribe [::bp/screen-width]))]
+              ;;  [:h3 (str "screen: " @(re-frame/subscribe [::bp/screen]))]]
               ]])
 
 

@@ -49,7 +49,7 @@
   ;; define routes here
   (defroute "/" []
     (re-frame/dispatch [::events/set-active-panel :home-panel])
-    (re-frame/dispatch [::events/set-re-pressed-example nil])
+    ;; (re-frame/dispatch [::events/set-re-pressed-example nil])
     (re-frame/dispatch
      [::rp/set-keydown-rules
       {:event-keys [[
