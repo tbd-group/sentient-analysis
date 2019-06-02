@@ -58,7 +58,8 @@
   {:builds
    [{:id           "dev"
      :source-paths ["src/cljs"]
-     :figwheel     {:on-jsload "sentient-analysis.core/mount-root"}
+     :figwheel     {:on-jsload "sentient-analysis.core/mount-root"
+                    :websocket-url "ws://0.0.0.0:3449/figwheel-ws"}
      :compiler     {:main                 sentient-analysis.core
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"

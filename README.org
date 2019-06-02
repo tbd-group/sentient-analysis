@@ -1,3 +1,5 @@
+#+STARTUP: showeverything
+
 * sentient-analysis
 
 A [[https://github.com/Day8/re-frame][re-frame]] application designed to ... well, that part is up to you.
