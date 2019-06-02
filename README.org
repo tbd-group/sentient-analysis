@@ -16,7 +16,7 @@ Put this in your Emacs config file:
          (figwheel-sidecar.repl-api/cljs-repl))")
 #+END_SRC
 
-Navigate to a clojurescript file and start a figwheel REPL with `cider-jack-in-clojurescript` or (`C-c M-J`)
+Navigate to a clojurescript file and start a figwheel REPL with ~cider-jack-in-clojurescript~ or (~C-c M-J~)
 
 *** Compile css:
 
@@ -44,7 +44,7 @@ lein figwheel dev
 
 Figwheel will automatically push cljs changes to the browser.
 
-Wait a bit, then browse to [[http://localhost:3449][http://localhost:3449]].
+Wait a bit, then browse to [[http://localhost:3449]].
 
 *** Run tests:
 
@@ -64,7 +64,7 @@ lein clean
 lein doo chrome-headless test once
 #+END_SRC
 
-Please note that [[https://github.com/bensu/doo][doo]] can be configured to run cljs.test in many JS environments (phantom, chrome, ie, safari, opera, slimer, node, rhino, or nashorn).
+Please note that [[https://github.com/bensu/doo][doo]] can be configured to run ~cljs.test~ in many JS environments (~phantom~, ~chrome~, ~ie~, ~safari~, ~opera~, ~slimer~, ~node~, ~rhino~, or ~nashorn~).
 
 ** Production Build
 
